@@ -6,8 +6,11 @@ import QuizPage from "./pages/QuizPage.jsx";
 import ResultsPage from "./pages/ResultsPage.jsx";
 
 function App() {
+  // Use basename only in production (GitHub Pages)
+  const basename = process.env.NODE_ENV === 'production' ? '/react-quiz-app' : '';
+
   return (
-    <Router basename="/react-quiz-app">
+    <Router basename={basename}>
       <div className="min-h-screen bg-terminal-dark">
         <Header />
         <Routes>

@@ -5,6 +5,11 @@ const QuizCard = forwardRef(
   ({ question, onSwipe, onCardLeftScreen, index, isTop }, ref) => {
     const [swipeDirection, setSwipeDirection] = useState(null);
 
+    // Guard against undefined question
+    if (!question) {
+      return null;
+    }
+
     const handleSwipe = (direction) => {
       setSwipeDirection(direction);
       // Right = True, Left = False
